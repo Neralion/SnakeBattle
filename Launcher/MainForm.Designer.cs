@@ -278,7 +278,7 @@ namespace Launcher
             this.txtUpdateDalay.Name = "txtUpdateDalay";
             this.txtUpdateDalay.Size = new System.Drawing.Size(38, 22);
             this.txtUpdateDalay.TabIndex = 4;
-            this.txtUpdateDalay.Text = "100";
+            this.txtUpdateDalay.Text = "1";
             this.txtUpdateDalay.TextChanged += new System.EventHandler(this.txtResolutionFields_TextChanged);
             this.txtUpdateDalay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFields_KeyPress);
             // 
@@ -298,7 +298,7 @@ namespace Launcher
             this.txtRenderDelay.Name = "txtRenderDelay";
             this.txtRenderDelay.Size = new System.Drawing.Size(38, 22);
             this.txtRenderDelay.TabIndex = 0;
-            this.txtRenderDelay.Text = "33";
+            this.txtRenderDelay.Text = "1";
             this.txtRenderDelay.TextChanged += new System.EventHandler(this.txtResolutionFields_TextChanged);
             this.txtRenderDelay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFields_KeyPress);
             // 

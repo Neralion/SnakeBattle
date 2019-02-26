@@ -19,13 +19,13 @@ namespace SnakeAStar
         private int _randInt;
         private int _predict;
 
-        private int[,] _field, _frameField;
+        private byte[,] _field, _frameField;
 
         private bool _moveToFood;
         private Point _posFood;
         private List<Point> _pathToFood, _lsDead;
-
-        private int[,] FieldUpdate(ref int[,] frameField, ref Snake snake, ref List<Point> food,
+        
+        private byte[,] FieldUpdate(ref byte[,] frameField, ref Snake snake, ref List<Point> food,
             ref List<Snake> enemies)
         {
             foreach (var tail in snake.Tail)
@@ -83,7 +83,7 @@ namespace SnakeAStar
         {
             Name = "Snake A";
             Color = Color.Blue;
-            _field = new int[size.Width, size.Height];
+            _field = new byte[size.Width, size.Height];
             for (int i = 0; i < size.Width; i++)
             {
                 for (int j = 0; j < size.Height; j++)
@@ -97,8 +97,7 @@ namespace SnakeAStar
                 _field[stone.X, stone.Y] = 2;
             }
 
-            _frameField = (int[,]) _field.Clone();
-            GC.Collect();
+            _frameField = (byte[,]) _field.Clone();
         }
 
         public void Update(Snake snake, List<Snake> enemies, List<Point> food, List<Point> dead)
@@ -128,6 +127,7 @@ namespace SnakeAStar
             try
             {
                 _pathToFood = PathNode.FindPath(ref _frameField, snake.Position, _posFood);
+                GC.Collect();
                 _predict = MovingSnake(_pathToFood[1], snake.Position);
                 Direction = (Move) _predict;
             }
@@ -146,8 +146,7 @@ namespace SnakeAStar
             }
 
             _moveToFood = false;
-            _frameField = (int[,]) _field.Clone();
-            GC.Collect();
+            _frameField = (byte[,]) _field.Clone();
         }
 
         private class PathNode
@@ -165,7 +164,7 @@ namespace SnakeAStar
                 get { return PathLengthFromStart + HeuristicEstimatePathLength; }
             }
 
-            public static List<Point> FindPath(ref int[,] field, Point start, Point goal)
+            public static List<Point> FindPath(ref byte[,] field, Point start, Point goal)
             {
                 var closedSet = new Collection<PathNode>();
                 var openSet = new Collection<PathNode>();
@@ -185,7 +184,7 @@ namespace SnakeAStar
                         return GetPathForNode(currentNode);
                     openSet.Remove(currentNode);
                     closedSet.Add(currentNode);
-                    foreach (var neighbourNode in GetNeighbours(currentNode, goal, field))
+                    foreach (var neighbourNode in GetNeighbours(currentNode, goal, ref field))
                     {
                         if (closedSet.Count(node => node.Position == neighbourNode.Position) > 0)
                             continue;
@@ -214,8 +213,8 @@ namespace SnakeAStar
                 return Abs(from.X - to.X) + Abs(from.Y - to.Y);
             }
 
-            private static Collection<PathNode> GetNeighbours(PathNode pathNode,
-                Point goal, int[,] field)
+            private static IEnumerable<PathNode> GetNeighbours(PathNode pathNode,
+                Point goal, ref byte[,] field)
             {
                 var result = new Collection<PathNode>();
 
