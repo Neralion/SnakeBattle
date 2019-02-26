@@ -111,9 +111,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BotRandomSnake\BotRandomSnake.csproj">
-      <Project>{cdee1132-bf6c-4ccb-ac09-c7a768b8686c}</Project>
-      <Name>BotRandomSnake</Name>
+    <ProjectReference Include="..\SnakeAStar\SnakeAStar.csproj">
+      <Project>{1c6d9794-0a45-464a-9804-ccec5745bf10}</Project>
+      <Name>SnakeAStar</Name>
     </ProjectReference>
     <ProjectReference Include="..\SnakeBattle\SnakeBattle.csproj">
       <Project>{6873baf7-6186-497c-8c82-c4c8ee49a74b}</Project>
