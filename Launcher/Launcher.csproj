@@ -119,6 +119,10 @@
       <Project>{6873baf7-6186-497c-8c82-c4c8ee49a74b}</Project>
       <Name>SnakeBattle</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SnakeGenetic\SnakeGenetic.csproj">
+      <Project>{311e720d-6d35-4580-be68-54e77bee65c3}</Project>
+      <Name>SnakeGenetic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

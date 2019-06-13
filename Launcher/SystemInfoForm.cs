@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Windows.Forms;
 using SnakeBattle;
+using SnakeGenetic;
 
 namespace Launcher
 {
@@ -28,13 +29,19 @@ namespace Launcher
                                                    $"Plugins: {world.PluginLoadingTime} ms\n" +
                                                    $"\n" +
                                                    $"Render time: {renderer.DrawTime} ms\n" +
-                                                   $"Update time: {world.LogicUpdateTime} ms\n";
+                                                   $"Update time: {world.LogicUpdateTime} ms\n" +
+                                                   $"\n"+
+                                                   $"Up: {RandomSnake.decision[0]} ms\n" +
+                                                   $"Down: {RandomSnake.decision[1]}\n" +
+                                                   $"Left: {RandomSnake.decision[2]}\n" +
+                                                   $"Right: {RandomSnake.decision[3]}\n";
                                 }));
                             }
                             Thread.Sleep(100);
                         }
                         catch
                         {
+                            // ignored
                         }
                     }
                 })

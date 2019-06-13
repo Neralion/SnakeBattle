@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInterface", "PluginIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeAStar", "SnakeAStar\SnakeAStar.csproj", "{1C6D9794-0A45-464A-9804-CCEC5745BF10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeGenetic", "SnakeGenetic\SnakeGenetic.csproj", "{311E720D-6D35-4580-BE68-54E77BEE65C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1C6D9794-0A45-464A-9804-CCEC5745BF10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C6D9794-0A45-464A-9804-CCEC5745BF10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C6D9794-0A45-464A-9804-CCEC5745BF10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{311E720D-6D35-4580-BE68-54E77BEE65C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{311E720D-6D35-4580-BE68-54E77BEE65C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{311E720D-6D35-4580-BE68-54E77BEE65C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{311E720D-6D35-4580-BE68-54E77BEE65C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

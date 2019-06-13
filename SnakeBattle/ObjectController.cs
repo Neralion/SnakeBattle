@@ -325,7 +325,7 @@ namespace SnakeBattle
                         {
                             head.FoodCollected++;
 
-                            if (head.FoodCollected >= 10)
+                            if (head.FoodCollected >= 1)
                             {
                                 GrowSnake(head);
                                 head.FoodCollected = 0;

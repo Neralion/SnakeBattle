@@ -6,6 +6,7 @@ namespace Launcher
     public partial class MainForm : Form
     {
         private BattlefieldForm battlefield;
+        
 
         public MainForm()
         {

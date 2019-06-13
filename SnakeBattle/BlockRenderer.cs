@@ -68,6 +68,7 @@ namespace SnakeBattle
 
         public void Draw(Graphics g)
         {
+            
             dt = DateTime.Now;
 
             var typesToDraw = new[] { typeof(Stone), typeof(Food), typeof(Tail), typeof(Head) };
@@ -92,7 +93,6 @@ namespace SnakeBattle
                     DrawBlood(g, obj.Position, obj.Color);
                 }
             }
-
             DrawTime = (DateTime.Now - dt).TotalMilliseconds;
         }
 

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace Launcher
@@ -31,6 +32,7 @@ namespace Launcher
         /// </summary>
         private void InitializeComponent()
         {
+            var rnd = new Random();
             this.btnLaunch = new System.Windows.Forms.Button();
             this.grBoxWorldSize = new System.Windows.Forms.GroupBox();
             this.lblBlockSize = new System.Windows.Forms.Label();
@@ -144,7 +146,7 @@ namespace Launcher
             this.txtFieldHeight.Name = "txtFieldHeight";
             this.txtFieldHeight.Size = new System.Drawing.Size(38, 22);
             this.txtFieldHeight.TabIndex = 1;
-            this.txtFieldHeight.Text = "100";
+            this.txtFieldHeight.Text = rnd.Next(25,50).ToString();
             this.txtFieldHeight.TextChanged += new System.EventHandler(this.txtResolutionFields_TextChanged);
             this.txtFieldHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFields_KeyPress);
             // 
@@ -155,7 +157,7 @@ namespace Launcher
             this.txtFieldWidth.Name = "txtFieldWidth";
             this.txtFieldWidth.Size = new System.Drawing.Size(38, 22);
             this.txtFieldWidth.TabIndex = 0;
-            this.txtFieldWidth.Text = "100";
+            this.txtFieldWidth.Text = rnd.Next(25,50).ToString();
             this.txtFieldWidth.TextChanged += new System.EventHandler(this.txtResolutionFields_TextChanged);
             this.txtFieldWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFields_KeyPress);
             // 
@@ -181,7 +183,7 @@ namespace Launcher
             this.txtTerrainPower.Name = "txtTerrainPower";
             this.txtTerrainPower.Size = new System.Drawing.Size(38, 22);
             this.txtTerrainPower.TabIndex = 4;
-            this.txtTerrainPower.Text = "35";
+            this.txtTerrainPower.Text = "1";
             this.txtTerrainPower.TextChanged += new System.EventHandler(this.txtResolutionFields_TextChanged);
             this.txtTerrainPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFields_KeyPress);
             // 
@@ -210,7 +212,7 @@ namespace Launcher
             this.txtTerrainDomainNumber.Name = "txtTerrainDomainNumber";
             this.txtTerrainDomainNumber.Size = new System.Drawing.Size(38, 22);
             this.txtTerrainDomainNumber.TabIndex = 0;
-            this.txtTerrainDomainNumber.Text = "30";
+            this.txtTerrainDomainNumber.Text = "8";
             this.txtTerrainDomainNumber.TextChanged += new System.EventHandler(this.txtResolutionFields_TextChanged);
             this.txtTerrainDomainNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFields_KeyPress);
             // 
@@ -243,7 +245,7 @@ namespace Launcher
             this.txtFoodCount.Name = "txtFoodCount";
             this.txtFoodCount.Size = new System.Drawing.Size(38, 22);
             this.txtFoodCount.TabIndex = 0;
-            this.txtFoodCount.Text = "25";
+            this.txtFoodCount.Text = "5";
             this.txtFoodCount.TextChanged += new System.EventHandler(this.txtResolutionFields_TextChanged);
             this.txtFoodCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFields_KeyPress);
             // 
@@ -278,7 +280,7 @@ namespace Launcher
             this.txtUpdateDalay.Name = "txtUpdateDalay";
             this.txtUpdateDalay.Size = new System.Drawing.Size(38, 22);
             this.txtUpdateDalay.TabIndex = 4;
-            this.txtUpdateDalay.Text = "1";
+            this.txtUpdateDalay.Text = "100";
             this.txtUpdateDalay.TextChanged += new System.EventHandler(this.txtResolutionFields_TextChanged);
             this.txtUpdateDalay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFields_KeyPress);
             // 
@@ -298,7 +300,7 @@ namespace Launcher
             this.txtRenderDelay.Name = "txtRenderDelay";
             this.txtRenderDelay.Size = new System.Drawing.Size(38, 22);
             this.txtRenderDelay.TabIndex = 0;
-            this.txtRenderDelay.Text = "1";
+            this.txtRenderDelay.Text = "100";
             this.txtRenderDelay.TextChanged += new System.EventHandler(this.txtResolutionFields_TextChanged);
             this.txtRenderDelay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFields_KeyPress);
             // 
